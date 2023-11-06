@@ -3,14 +3,27 @@ import { deleteAsync as del } from 'del';
 import pkg from 'gulp';
 import autoPrefixer from 'gulp-autoprefixer';
 import concat from 'gulp-concat';
+import fonter from 'gulp-fonter';
 import imagemin from 'gulp-imagemin';
 import gulpSass from 'gulp-sass';
+import ttf2woff2 from 'gulp-ttf2woff2';
 import uglify from 'gulp-uglify';
 import * as sass1 from 'sass';
 
 const sass = gulpSass(sass1);
 const { dest, parallel, src, watch, series } = pkg;
 
+function fonts() {
+	return src('app/fonts/*.*')
+		.pipe(
+			fonter({
+				formats: ['woff', 'ttf'],
+			}),
+		)
+		.pipe(src('app/fonts/*.ttf'))
+		.pipe(ttf2woff2())
+		.pipe(dest('app/fonts'));
+}
 function browsersync() {
 	browserSync.init({
 		server: { baseDir: 'app/' },
@@ -56,5 +69,5 @@ function watching() {
 
 const build = series(cleanDist, images, move);
 
-export { browsersync, build, cleanDist, images, script, styles, watching };
+export { browsersync, build, cleanDist, fonts, images, script, styles, watching };
 export default parallel(styles, script, browsersync, watching);

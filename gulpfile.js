@@ -52,7 +52,7 @@ function images() {
 }
 
 function move() {
-	return src(['app/**/*.html', 'app/css/style.min.css', 'app/js/main.min.js'], {
+	return src(['app/**/*.html', 'app/css/style.min.css', 'app/js/main.min.js', 'app/fonts/*.*'], {
 		base: 'app',
 	}).pipe(dest('dist'));
 }
@@ -69,5 +69,5 @@ function watching() {
 
 const build = series(cleanDist, images, move);
 
-export { browsersync, build, cleanDist, fonts, images, script, styles, watching };
+export { browsersync, build, cleanDist, fonts, images, move, script, styles, watching };
 export default parallel(styles, script, browsersync, watching);

@@ -40,7 +40,11 @@ function styles() {
 }
 
 function script() {
-	return src(['node_modules/jquery/dist/jquery.js', 'app/js/main.js'])
+	return src([
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/slick-carousel/slick/slick.js',
+		'app/js/main.js',
+	])
 		.pipe(concat('main.min.js'))
 		.pipe(uglify())
 		.pipe(dest('app/js'))

@@ -1,4 +1,10 @@
 $(function () {
+	$('.star').rateYo({
+		startWidth: '17px',
+		normalFill: '#ccccce',
+		ratedFill: '#ffc35b',
+		readOnly: true,
+	});
 	$('.top-slider__inner').slick({
 		dots: true,
 		arrows: false,

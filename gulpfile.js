@@ -32,7 +32,7 @@ function browsersync() {
 
 function styles() {
 	return src('app/scss/styles.scss')
-		.pipe(autoPrefixer({ overrideBrowserslist: ['last 10 version'], grid: true }))
+		.pipe(autoPrefixer({ overrideBrowserslist: ['last 3 version'], grid: true }))
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(concat('style.min.css'))
 		.pipe(dest('app/css'))
@@ -43,6 +43,7 @@ function script() {
 	return src([
 		'node_modules/jquery/dist/jquery.js',
 		'node_modules/slick-carousel/slick/slick.js',
+		'node_modules/rateyo/src/jquery.rateyo.js',
 		'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
 		'app/js/main.js',
 	])

@@ -7,3 +7,7 @@ $(function () {
 		autoplaySpeed: 2000,
 	});
 });
+
+Fancybox.bind('[data-fancybox]', {
+	// Your custom options
+});

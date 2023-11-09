@@ -12,17 +12,17 @@
 	&__content {
 	}
 }
+.filter__title {
+	text-transform: uppercase;
+	color: $title;
+	font-size: 22px;
+	margin-bottom: 25px;
+	@extend %roboto-400;
+}
 .filter__item {
 	padding: 35px 30px 40px;
 	border: solid 1px #ececec;
 	margin-bottom: 40px;
-	&__title {
-		text-transform: uppercase;
-		color: $title;
-		font-size: 22px;
-		margin-bottom: 25px;
-		@extend %roboto-400;
-	}
 }
 .filter-search {
 	&__form {
@@ -177,5 +177,69 @@
 		left: 0px;
 		margin-top: 3px;
 		border-radius: 50%;
+	}
+}
+
+.filter-category {
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__label {
+		cursor: pointer;
+	}
+
+	&__input {
+		@extend %checkbox-hidden;
+		&:checked + .filter-category__checkbox {
+			background-color: $accent;
+			color: #fff;
+		}
+	}
+
+	&__checkbox {
+		background: #f6f6f6;
+		color: $title;
+		display: flex;
+		justify-content: space-between;
+		padding: 16px 20px;
+	}
+}
+.filter {
+	&__item {
+	}
+
+	&__title {
+	}
+}
+.filter-popular {
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px 15px;
+	}
+
+	&__label {
+		// display: inline-block;
+		// margin-bottom: 20px;
+		// margin-right: 15px;
+		cursor: pointer;
+	}
+
+	&__input {
+		@extend %checkbox-hidden;
+		&:checked + .filter-popular__checkbox {
+			background-color: $accent;
+			color: #fff;
+			border-color: $accent;
+		}
+	}
+
+	&__checkbox {
+		border: 1px solid $default;
+		padding: 10px 20px;
+		line-height: 40px;
 	}
 }

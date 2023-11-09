@@ -44,6 +44,7 @@ function script() {
 		'node_modules/jquery/dist/jquery.js',
 		'node_modules/slick-carousel/slick/slick.js',
 		'node_modules/rateyo/src/jquery.rateyo.js',
+		'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
 		'node_modules/@fancyapps/ui/dist/fancybox/fancybox.umd.js',
 		'app/js/main.js',
 	])

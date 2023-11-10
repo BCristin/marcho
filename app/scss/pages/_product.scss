@@ -26,6 +26,7 @@
 	&__box {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 20px;
 	}
 
 	&__price {
@@ -52,7 +53,7 @@
 	}
 
 	&__text {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 		span {
 			display: block;
 			color: $title;
@@ -77,6 +78,7 @@
 		@extend %btn;
 		border: none;
 		margin-left: 15px;
+		cursor: pointer;
 	}
 }
 .product-slide {
@@ -87,12 +89,15 @@
 	}
 
 	&__thumb-item {
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		width: 140px;
 		height: 140px;
 		cursor: pointer;
 		img {
-			object-fit: contain;
+			height: 140px;
+			width: 140px;
+			object-fit: cover;
+			object-position: top;
 		}
 	}
 
@@ -140,31 +145,65 @@
 	}
 }
 
-.star {
-}
 .product-filter {
-	&__color {
+	&__color,
+	&__size {
+		margin-bottom: 25px;
+		label {
+			margin-right: 10px;
+			display: inline-block;
+		}
 	}
 
-	&__color-title {
+	&__color-title,
+	&__size-title {
+		margin-bottom: 5px;
+		font-size: 18px;
+		color: $title;
+		@extend %roboto-400;
 	}
 
 	&__color-input {
+		@extend %radio-hidden;
+		&:checked {
+			& + .product-filter__color-checkbox {
+				border-color: $accent;
+			}
+		}
 	}
 
 	&__color-checkbox {
-	}
+		width: 24px;
+		height: 24px;
+		cursor: pointer;
+		border: 1px solid #ccccce;
+		position: relative;
+		display: inline-block;
 
-	&__size {
-	}
-
-	&__size-title {
+		span {
+			display: inline-block;
+			position: absolute;
+			content: '';
+			width: 16px;
+			height: 16px;
+			top: 3px;
+			left: 3px;
+		}
 	}
 
 	&__size-input {
+		@extend %radio-hidden;
+		&:checked {
+			& + .product-filter__size-checkbox {
+				border-color: $accent;
+			}
+		}
 	}
 
 	&__size-checkbox {
+		padding: 4px 12px;
+		border: 1px solid #ccccce;
+		display: inline-block;
 	}
 }
 .product-info {

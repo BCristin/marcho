@@ -311,6 +311,7 @@
 	&:hover {
 		.product-item__btn {
 			background-color: $accent;
+			box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 		}
 	}
 	.product-item__images {
@@ -332,7 +333,7 @@
 		color: #fff;
 		@extend %roboto-400;
 
-		padding: 15px 45px;
+		padding: 11px 40px;
 	}
 	.product-item__content-box {
 		max-width: 62%;

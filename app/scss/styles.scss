@@ -482,6 +482,7 @@
 
 .product-item {
 	max-width: 370px;
+	text-align: center;
 	&--sale {
 		.product-item__img-box::before {
 			content: 'SALE';
@@ -568,6 +569,15 @@
 
 	&__old-price {
 		text-decoration: line-through;
+	}
+	&__new-price {
+		color: $title;
+		@extend %roboto-500;
+	}
+
+	&__btn,
+	&__text {
+		display: none;
 	}
 }
 

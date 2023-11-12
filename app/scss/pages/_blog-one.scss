@@ -3,6 +3,7 @@
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
+
 		gap: 35px;
 	}
 
@@ -64,14 +65,19 @@
 		h4 {
 			font-size: 22px;
 			line-height: 32px;
+
 			color: #29282d;
 		}
+
 		p {
 			font-size: 16px;
 			line-height: 26px;
-			height: auto;
-			text-align: justify;
+
 			flex: 1;
+
+			height: auto;
+
+			text-align: justify;
 		}
 
 		blockquote {
@@ -89,8 +95,9 @@
 		}
 
 		&__img--left {
-			width: 340px;
 			float: left;
+
+			width: 340px;
 			margin: 5px 35px 10px 0;
 		}
 	}
@@ -173,16 +180,19 @@
 		font-size: 24px;
 		line-height: 1.083;
 
+		margin-bottom: 30px;
+
 		color: $title;
 		@extend %roboto-700;
-		margin-bottom: 30px;
 	}
 
 	&__box-input {
 		display: flex;
 		justify-content: space-between;
-		gap: 30px;
+
 		margin-bottom: 30px;
+
+		gap: 30px;
 	}
 
 	&__text-input {
@@ -207,5 +217,137 @@
 	&__btn {
 		border: none;
 		@extend %btn;
+	}
+}
+
+.map {
+	padding: 120px 0;
+}
+
+.contact {
+	&__inner {
+		display: flex;
+
+		margin-bottom: 120px;
+
+		gap: 30px;
+	}
+
+	&__info {
+		width: 33.333%;
+	}
+
+	&__title {
+		font-size: 48px;
+		line-height: 58px;
+
+		margin-bottom: 30px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+
+	&__text {
+		margin-bottom: 60px;
+
+		text-align: justify;
+	}
+
+	&__card {
+		font-size: 16px;
+		line-height: 1.625;
+
+		position: relative;
+
+		margin-bottom: 40px;
+		margin-left: 82px;
+
+		color: $title;
+		@extend %quicksand-400;
+
+		a,
+		address {
+			font-style: normal;
+
+			color: inherit;
+			@extend %quicksand-400;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -82px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 60px;
+			height: 60px;
+
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+		}
+
+		&--phone::before {
+			content: url('../images/icons/tel.svg');
+		}
+
+		&--adress::before {
+			content: url('../images/icons/location.svg');
+		}
+
+		&--email::before {
+			content: url('../images/icons/email.svg');
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+
+		width: 66.666%;
+		padding: 60px 40px;
+
+		box-shadow: 0px 10px 40px 0px rgba(172, 172, 172, 0.3);
+
+		gap: 30px;
+	}
+
+	&__form-title {
+		font-size: 22px;
+		line-height: 2.636;
+
+		min-width: 100%;
+		margin-bottom: 30px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+
+	&__form-input,
+	&__form-textarea {
+		font-size: 16px;
+
+		flex-grow: 1;
+
+		padding: 20px;
+
+		color: rgb(141, 141, 141);
+		border: none;
+		background-color: $bg;
+	}
+
+	&__form-textarea {
+		width: 100%;
+		height: 200px;
+
+		resize: none;
+	}
+
+	&__form-btn {
+		border: none;
+		@extend %btn;
+		@extend %roboto-400;
 	}
 }

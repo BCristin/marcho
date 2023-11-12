@@ -20,7 +20,9 @@
 .blog-page-items {
 	display: flex;
 	flex-direction: column;
+
 	gap: 30px;
+
 	&__content {
 		padding: 40px;
 	}
@@ -28,11 +30,13 @@
 	&__item-img {
 		max-width: 770px;
 		height: 450px;
+
 		object-fit: cover;
 	}
 
 	&__item {
 		border: solid 1px #ececec;
+
 		&:hover {
 			box-shadow: 0px 20px 60px 0px rgba(202, 202, 202, 0.35);
 		}
@@ -51,15 +55,16 @@
 			color: $accent;
 		}
 	}
+
 	&__item-title-link {
-		color: inherit;
 		font-family: inherit;
 		font-size: inherit;
+
+		color: inherit;
 	}
+
 	&__item-info {
 		display: flex;
-
-		margin-bottom: 20px;
 
 		gap: 35px;
 	}

@@ -1,0 +1,353 @@
+.blog-page-items {
+	&__content {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+
+		gap: 35px;
+	}
+
+	.blog-one {
+		&__info {
+			font-size: 16px;
+			line-height: 1.2;
+
+			display: flex;
+
+			color: rgb(141, 141, 141);
+
+			gap: 29px;
+
+			& > * {
+				position: relative;
+
+				margin-left: 27px;
+
+				&::before {
+					position: absolute;
+					top: 2px;
+					left: -26px;
+
+					width: 16px;
+					height: 16px;
+
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+			}
+		}
+
+		&__info-comments {
+			margin-left: 20px;
+
+			&::before {
+				content: url('../images/blogOne/icons/comments.svg');
+			}
+		}
+
+		&__info-date {
+			&::before {
+				content: url('../images/blogOne/icons/calendar.svg');
+			}
+		}
+
+		&__info-author {
+			font-size: inherit;
+
+			color: inherit;
+			@extend %quicksand-500;
+
+			&::before {
+				content: url('../images/blogOne/icons/user.svg');
+			}
+		}
+
+		h4 {
+			font-size: 22px;
+			line-height: 32px;
+
+			color: #29282d;
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 26px;
+
+			flex: 1;
+
+			height: auto;
+
+			text-align: justify;
+		}
+
+		blockquote {
+			font-size: 21px;
+			line-height: 32px;
+
+			padding: 40px;
+
+			text-align: justify;
+
+			color: $title;
+			border-left: $accent solid 5px;
+			background-color: #f6f6f6;
+			@extend %roboto-400;
+		}
+
+		&__img--left {
+			float: left;
+
+			width: 340px;
+			margin: 5px 35px 10px 0;
+		}
+	}
+}
+
+.tags-share {
+	display: flex;
+	justify-content: space-between;
+
+	&__tags,
+	&__share {
+		@extend %quicksand-500;
+
+		span {
+			color: $title;
+		}
+	}
+
+	&__social {
+		display: inline-flex;
+
+		margin-left: 10px;
+
+		gap: 13px;
+	}
+
+	&__link {
+		width: 15px;
+		height: 15px;
+
+		svg {
+			width: 15px;
+			height: 15px;
+
+			fill: #727272;
+
+			&:hover {
+				fill: $accent;
+			}
+		}
+	}
+}
+
+.authore {
+	display: flex;
+
+	gap: 29px;
+
+	&__name {
+		font-style: 22px;
+		line-height: 26px;
+
+		margin-top: 5px;
+
+		color: $title;
+		@extend %roboto-500;
+	}
+}
+
+.blog-page {
+	&__hr {
+		width: 100%;
+
+		border-top: solid 1px #ececec;
+	}
+
+	&__comments-title {
+		font-size: 24px;
+		line-height: 1.083;
+
+		margin-bottom: 31px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+}
+
+.blog-page-form {
+	&__title {
+		font-size: 24px;
+		line-height: 1.083;
+
+		margin-bottom: 30px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+
+	&__box-input {
+		display: flex;
+		justify-content: space-between;
+
+		margin-bottom: 30px;
+
+		gap: 30px;
+	}
+
+	&__text-input {
+		width: 100%;
+		height: 50px;
+		padding: 0 20px;
+
+		border: 1px solid #f0f0f0;
+	}
+
+	&__textarea {
+		width: 100%;
+		height: 225px;
+		margin-bottom: 40px;
+		padding: 15px 20px;
+
+		resize: none;
+
+		border: 1px solid #f0f0f0;
+	}
+
+	&__btn {
+		border: none;
+		@extend %btn;
+	}
+}
+
+.map {
+	padding: 120px 0;
+}
+
+.contact {
+	&__inner {
+		display: flex;
+
+		margin-bottom: 120px;
+
+		gap: 30px;
+	}
+
+	&__info {
+		width: 33.333%;
+	}
+
+	&__title {
+		font-size: 48px;
+		line-height: 58px;
+
+		margin-bottom: 30px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+
+	&__text {
+		margin-bottom: 60px;
+
+		text-align: justify;
+	}
+
+	&__card {
+		font-size: 16px;
+		line-height: 1.625;
+
+		position: relative;
+
+		margin-bottom: 40px;
+		margin-left: 82px;
+
+		color: $title;
+		@extend %quicksand-400;
+
+		a,
+		address {
+			font-style: normal;
+
+			color: inherit;
+			@extend %quicksand-400;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: -82px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			width: 60px;
+			height: 60px;
+
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+		}
+
+		&--phone::before {
+			content: url('../images/icons/tel.svg');
+		}
+
+		&--adress::before {
+			content: url('../images/icons/location.svg');
+		}
+
+		&--email::before {
+			content: url('../images/icons/email.svg');
+		}
+	}
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+
+		width: 66.666%;
+		padding: 60px 40px;
+
+		box-shadow: 0px 10px 40px 0px rgba(172, 172, 172, 0.3);
+
+		gap: 30px;
+	}
+
+	&__form-title {
+		font-size: 22px;
+		line-height: 2.636;
+
+		min-width: 100%;
+		margin-bottom: 30px;
+
+		color: $title;
+		@extend %roboto-700;
+	}
+
+	&__form-input,
+	&__form-textarea {
+		font-size: 16px;
+
+		flex-grow: 1;
+
+		padding: 20px;
+
+		color: rgb(141, 141, 141);
+		border: none;
+		background-color: $bg;
+	}
+
+	&__form-textarea {
+		width: 100%;
+		height: 200px;
+
+		resize: none;
+	}
+
+	&__form-btn {
+		border: none;
+		@extend %btn;
+		@extend %roboto-400;
+	}
+}

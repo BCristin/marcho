@@ -17,9 +17,40 @@ body {
 	margin: 0 auto;
 	padding: 0 15px;
 }
+
 a {
 	font-size: 16px;
 	line-height: 26px;
 	color: $default;
 	@extend %roboto-500;
+}
+.pagination {
+	display: flex;
+	justify-content: center;
+	padding: 30px 0;
+	&__prev {
+	}
+
+	&__arrows {
+		text-transform: uppercase;
+		span {
+			margin: 10px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		padding: 0 35px;
+	}
+
+	&__item {
+		padding: 0 15px;
+	}
+
+	&__link--active {
+		color: $accent;
+	}
+
+	&__next {
+	}
 }
